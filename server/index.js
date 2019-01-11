@@ -1,13 +1,15 @@
 const express = require('express');
-
-const app = express();
 const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 const db = require('../database/seed.js');
+
+const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(morgan('tiny'));
 
 app.get('/cart', (req, res) => {
   db.connection.query('SELECT items.item_id, name, price, rating, numOfRatings, imgUrl FROM items INNER JOIN cartItems ON items.item_id = cartItems.item_id', (err, results) => {
@@ -35,7 +37,7 @@ app.get('/items/:id/related', (req, res) => {
     if (err) {
       return res.send(err);
     }
-    let related = JSON.parse(results[0].relatedItems);
+    const related = JSON.parse(results[0].relatedItems);
     
     db.connection.query(`SELECT item_id, name, price, rating, numOfRatings, imgUrl FROM items WHERE item_id = ${related[0]} OR item_id = ${related[1]} OR item_id = ${related[2]}`, (err, results) => {
       if (err) {
