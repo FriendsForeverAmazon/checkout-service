@@ -52,4 +52,25 @@ npm install -g webpack
 npm install -g nodemon
 npm install
 ```
+### CRUD API
+1. Toggle database by requiring appropriate source in:
+  - server/index.js
+    - const db = require('../dbMongodb/db.js') / require('../dbPostgres/db.js')
+  - server/router.js
+    - const {
+        addToCart,
+        readFromCart,
+        deleteFromCart,
+        updateCart,
+      } = require('./controllerMongoDB') / require('./controllerPostgres')
 
+2. Routes
+// CREATE/UPDATE
+router.post('/cart/:id', addToCart);
+router.post('cart/update/:id', updateCart);
+
+// READ
+router.get('/cart/:id', readFromCart);
+
+// DELETE
+router.get('/cart/delete/:id', deleteFromCart);
