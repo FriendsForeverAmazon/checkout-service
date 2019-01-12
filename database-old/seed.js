@@ -29,4 +29,3 @@ module.exports.connection.connect((err) => {
     }
   }
 });
-

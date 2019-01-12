@@ -1,6 +1,6 @@
 const app = require('./index.js');
 
-const port = 1337;
+const port = 3000;
 
 app.listen(port, (err) => {
   if (err) {
