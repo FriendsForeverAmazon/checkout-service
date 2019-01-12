@@ -4,3 +4,5 @@ master_plan
 .DS_Store
 client/dist/bundle.js
 seed/fakeData.csv
+database-old/*
+

@@ -10,7 +10,7 @@
   "scripts": {
     "schema": "mysql -uroot < database/schema.sql",
     "seed": "node seed/seed.js",
-    "start": "node server/server.js",
+    "start": "nodemon --inspect server/server.js",
     "build": "webpack --config webpack.prod.js",
     "react-dev": "webpack -d --watch",
     "lint": "./node_modules/.bin/eslint",
@@ -27,6 +27,7 @@
     "mongoose": "^5.4.2",
     "morgan": "^1.9.1",
     "mysql": "^2.16.0",
+    "nodemon": "^1.18.9",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-router": "^4.3.1",
