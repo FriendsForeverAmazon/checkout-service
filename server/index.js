@@ -4,9 +4,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const router = require('./router');
-// const db = require('../database/seed.js');
-const db = require('../mongoDB/db.js');
-// db for require postgres
+// const db = require('../dbMongodb/db.js');
+const db = require('../dbPostgres/db.js');
 
 const app = express();
 

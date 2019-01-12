@@ -1,4 +1,4 @@
-const { Cart } = require('../mongoDB/db.js');
+const { Cart } = require('../dbMongodb/db.js');
 
 // create
 const addToCart = (req, res, next) => {

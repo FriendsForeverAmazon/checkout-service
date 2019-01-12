@@ -1,7 +1,7 @@
 const fs = require('fs');
 const faker = require('faker');
 
-const stream = fs.createWriteStream('./seed/fakeData.csv');
+const stream = fs.createWriteStream('./seed/fakeProducts.tsv');
 
 let i = 0;
 
@@ -18,7 +18,7 @@ const write = () => {
         faker.random.number({ min: 1, max: 100 }), faker.random.number({ min: 1, max: 100 })]),
       imgUrl: faker.image.fashion(200, 200, true),
     };
-    if (!stream.write(JSON.stringify(item) + (i++) + ', \n')) {
+    if (!stream.write(JSON.stringify(item) + (i++) + '\t \n')) {
       return;
     }
   }
