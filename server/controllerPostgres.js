@@ -34,6 +34,24 @@ const readFromCart = (req, res, next) => {
     });
 };
 
+const readSingleCart = (req, res, next) => {
+  Cart.findAll({
+    where: {
+      id: req.body.id,
+    },
+  })
+    .then((cartData) => {
+      console.log('SUCCESS: got all cart data');
+      res.status(200);
+      res.send(cartData);
+    })
+    .catch((err) => {
+      console.log('FAILED: err getting all cart data');
+      res.status(500);
+      res.send(err);
+    });
+};
+
 // delete
 // remove cart by user
 const deleteFromCart = (req, res, next) => {
@@ -74,6 +92,7 @@ const updateCart = (req, res, next) => {
 module.exports = {
   addToCart,
   readFromCart,
+  readSingleCart,
   deleteFromCart,
   updateCart,
 };

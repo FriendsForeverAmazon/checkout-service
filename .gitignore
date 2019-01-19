@@ -6,3 +6,4 @@ client/dist/bundle.js
 seed/fakeData.csv
 database-old
 seed/fakeProducts.tsv
+seed/fakeCarts.tsv
