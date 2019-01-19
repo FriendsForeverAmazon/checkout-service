@@ -9,7 +9,9 @@
   },
   "scripts": {
     "schema": "mysql -uroot < database/schema.sql",
-    "seed": "node seed/seed.js",
+    "seedP": "node seed/seedProducts.js",
+    "seedC": "node seed/seedCarts.js",
+    "query": "node seed/queryCarts.js",
     "start": "nodemon --inspect server/server.js",
     "build": "webpack --config webpack.prod.js",
     "react-dev": "webpack -d --watch",
