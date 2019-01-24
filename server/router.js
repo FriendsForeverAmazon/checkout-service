@@ -1,26 +1,26 @@
 const router = require('express').Router();
-const {
-  addToCart,
-  readFromCart,
-  deleteFromCart,
-  updateCart,
-} = require('./controllerMongoDB');
 // const {
 //   addToCart,
 //   readFromCart,
 //   deleteFromCart,
 //   updateCart,
-// } = require('./controllerPostgres');
+// } = require('./controllerMongoDB');
+const {
+  addToCart,
+  readFromCart,
+  deleteFromCart,
+  updateCart,
+} = require('./controllerPostgres');
 
 // CREATE/UPDATE
 router.post('/cart/:id', addToCart);
-router.post('cart/update/:id', updateCart);
+router.put('cart/:id', updateCart);
 
 // READ
 router.get('/cart/:id', readFromCart);
 
 // DELETE
-router.get('/cart/delete/:id', deleteFromCart);
+router.delete('/cart/:id', deleteFromCart);
 
 
 module.exports = router;

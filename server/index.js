@@ -1,11 +1,12 @@
+require('newrelic');
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const router = require('./router');
-const db = require('../dbMongodb/db.js');
-// const db = require('../dbPostgres/db.js');
+// const db = require('../dbMongodb/db.js');
+const db = require('../dbPostgres/db.js');
 
 const app = express();
 
