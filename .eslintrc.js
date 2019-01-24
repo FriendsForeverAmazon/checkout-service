@@ -3,6 +3,7 @@ module.exports = {
     "rules": {
         "no-console": "off",
         "no-plusplus": "off",
-        "prefer-template": "off"
+        "prefer-template": "off",
+        "import/no-extraneous-dependencies": "off"
     }
 };
