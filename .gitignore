@@ -7,3 +7,4 @@ seed/fakeData.csv
 database-old
 seed/fakeProducts.tsv
 seed/fakeCarts.tsv
+newrelic_config.js

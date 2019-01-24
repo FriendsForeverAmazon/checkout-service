@@ -1,3 +1,5 @@
+const { key } = require('./newrelic_config');
+
 'use strict'
 /**
  * New Relic agent configuration.
@@ -13,7 +15,7 @@ exports.config = {
   /**
    * Your New Relic license key.
    */
-  license_key: 'a9678e907bcfebc43fce62e8561cdd94dce9f8ce',
+  license_key: key,
   logging: {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing
