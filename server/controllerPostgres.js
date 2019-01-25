@@ -1,10 +1,11 @@
-const { Cart } = require('../dbPostgres/db.js');
+const Sequelize = require('sequelize');
+const { Products, Cart } = require('../dbPostgres/db.js');
 
 // create
 const addToCart = (req, res, next) => {
   Cart.create({
     user: req.body.user,
-    productName: req.body.productName,
+    productID: req.params.id,
     quantity: req.body.quantity,
   })
     .then(() => {
@@ -35,9 +36,11 @@ const readFromCart = (req, res, next) => {
 };
 
 const readSingleCart = (req, res, next) => {
+  // console.log('----', db);
+  // console.log('----', Cart);
   Cart.findAll({
     where: {
-      id: req.body.id,
+      id: req.params.id,
     },
   })
     .then((cartData) => {

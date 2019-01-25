@@ -10,6 +10,7 @@ const {
   readFromCart,
   deleteFromCart,
   updateCart,
+  readSingleCart,
 } = require('./controllerPostgres');
 
 // CREATE/UPDATE
@@ -17,7 +18,10 @@ router.post('/cart/:id', addToCart);
 router.put('cart/:id', updateCart);
 
 // READ
-router.get('/cart/:id', readFromCart);
+router.get('/cart/:id', readSingleCart);
+router.get('/cart', readFromCart);
+router.get('/items/:id', readSingleCart);
+router.get('/items/:id/related', readSingleCart);
 
 // DELETE
 router.delete('/cart/:id', deleteFromCart);
